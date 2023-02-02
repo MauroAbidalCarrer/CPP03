@@ -20,7 +20,6 @@ int main()
 
     //ScavTrap tests
     ScavTrap defaultScavTrap;
-    defaultScavTrap.guardGate();
     defaultScavTrap.ScavTrapDebug("defaultScavTrap");
     ScavTrap namedScavTrap = ScavTrap("awesome clap trap");
     namedScavTrap.ScavTrapDebug("namedScavTrap");
