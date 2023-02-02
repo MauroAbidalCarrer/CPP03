@@ -24,6 +24,8 @@ class ClapTrap
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
     void debug(std::string title);
+    //overloads
+	ClapTrap				&operator=(ClapTrap const &rhs);
 };
 
 #endif

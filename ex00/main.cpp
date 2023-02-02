@@ -8,8 +8,11 @@ int main()
     clapTrap.debug("default clap trap");
     ClapTrap* namedClapTrap = new ClapTrap("awesome clap trap");
     namedClapTrap->debug("named clap trap");
-    ClapTrap* copiedClapTrap = new ClapTrap(*namedClapTrap);
-    copiedClapTrap->debug("copied clap trap");
+    ClapTrap copiedClapTrap = ClapTrap(*namedClapTrap);
+    copiedClapTrap.debug("copied clap trap");
+    ClapTrap assignedClapTrap;
+    assignedClapTrap = copiedClapTrap;
+    assignedClapTrap.debug("assigned clap trap");
 
     delete namedClapTrap;
 }

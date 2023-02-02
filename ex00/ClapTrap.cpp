@@ -40,7 +40,7 @@ bool ClapTrap::tryPerformAction()
 void ClapTrap::attack(const std::string& target)
 {
     if (tryPerformAction())
-        std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+        std::cout << "ClapTrap " << name << " attacks \"" << target << "\", causing " << attackDamage << " points of damage!" << std::endl;
 }
 void ClapTrap::takeDamage(unsigned int amount)
 {
@@ -64,4 +64,14 @@ void ClapTrap::debug(std::string title)
     std::cout << "hitPoints = " << hitPoints << std::endl;
     attack("something");
     std::cout << std::endl;
+}
+
+//overrides
+ClapTrap &ClapTrap::operator=(ClapTrap const &rhs)
+{
+	name = rhs.name;
+	hitPoints = rhs.hitPoints;
+	energyPoints = rhs.energyPoints;
+	attackDamage = rhs.attackDamage;
+	return (*this);
 }
